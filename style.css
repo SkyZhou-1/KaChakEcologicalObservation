@@ -1,0 +1,165 @@
+:root {
+    --base-gap: 2vh; 
+}
+
+body { 
+    margin: 0; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    min-height: 100vh; 
+    background: linear-gradient(135deg, #e6f3e6 0%, #c8e6c9 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#ui-layer { 
+    padding: var(--base-gap); 
+    text-align: center; 
+    color: #2c3e50; 
+    width: 90vw;
+    max-width: 600px;
+}
+
+#main-logo {
+    height: 8rem; /* 稍微缩小一点，更协调 */
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+}
+
+#main-logo:hover {
+    transform: rotate(5deg) scale(1.1);
+}
+
+#welcome {
+    font-weight: bold;
+    font-size: 1.6rem;
+    margin: 1vh 0;
+    color: #2c3e50;
+}
+
+#difficulty-guide {
+    margin-bottom: 2vh;
+    color: #555;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#difficulty-settings {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 2vh;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    color: #2d5a27;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s;
+}
+
+button:hover {
+    background: #2ecc71;
+    color: white;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+#game-container { 
+    position: relative; 
+    border-radius: 12px;
+    overflow: hidden; 
+    background-color: #1a5a35; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15), inset 0 0 15px rgba(0,0,0,0.2);
+    max-width: 95vw; 
+    max-height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas { 
+    max-width: 100%; 
+    max-height: 100%;
+    display: block; 
+    cursor: pointer;
+}
+
+#message-display {
+    display: none;
+    margin-top: 20px;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.1rem;
+    width: 85vw;
+    max-width: 500px;
+    animation: slideUp 0.5s ease-out;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+#game-instructions {
+    margin: 4vh auto 2vh auto; /* 关键：左右 auto 实现居中 */
+    padding: 2vh 3vw;
+    /* 建议改为更窄的比例，例如从 85vw 降到 70vw，或设置 max-width */
+    width: 70vw; 
+    max-width: 450px; /* 限制最大宽度，防止在宽屏显示器上拉得太长 */
+    
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #2d5a27;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    
+    /* 确保整体布局在 flex 容器中居中 */
+    align-self: center; 
+}
+
+#game-instructions h3 {
+    font-size: 1rem;
+    margin-bottom: 1vh;
+    color: #1a5a35;
+}
+
+#game-instructions ul {
+    margin: 0;
+    padding-left: 1.2rem; /* 稍微缩小左边距 */
+    font-size: 0.85rem;    /* 稍微调小一点 */
+    line-height: 1.5;
+}
+
+#game-instructions li {
+    margin-bottom: 8px;
+}
+
+#game-instructions strong {
+    color: #1a5a35;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+* {
+    -webkit-touch-callout: none; /* 禁用系统默认菜单 */
+    -webkit-user-select: none;   /* 禁用文字选中 */
+    user-select: none;
+}

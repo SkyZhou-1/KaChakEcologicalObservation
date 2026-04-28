@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> <title>KaChak</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="ui-layer">
+        <img id="main-logo" src="src/KaChak_logo_circle.png" alt="KaChak Logo">
+        
+        <p id="welcome">KaChak Ecological Observation</p>
+        
+        <p id="difficulty-guide">Which size of forest would you like to explore?</p>
+
+        <div id="difficulty-settings">
+            <button onclick="changeDifficulty('EASY')">SMALL</button>
+            <button onclick="changeDifficulty('MEDIUM')">MEDIUM</button>
+            <button onclick="changeDifficulty('HARD')">BIG</button>
+        </div>
+        <p><span id="flag-count">10</span> more species waiting to be discovered!</p>
+    </div>
+
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+    </div>
+
+    <div id="message-display"></div>
+
+    <div id="game-instructions">
+        <h3>📸 How to Observe?</h3>
+        <ul>
+            <li><strong>Tap:</strong> Explore a patch of forest. If you see a number, it tells you how many <strong>species</strong> are hidden in the adjacent 8 patches.</li>
+            <li><strong>Long Press:</strong> Take <strong>photo </strong> (📸) where you suspect a species is hiding.</li>
+            <li><strong>Goal:</strong> Take photo for all species' locations without "disturbing" them (clicking on them) to complete your observation!</li>
+        </ul>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
